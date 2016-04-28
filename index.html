@@ -1,0 +1,36 @@
+
+    <!--
+      1 angular hello world
+      2 falling div
+      3 remove div
+      4 button keydown
+    -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app="bubbleApp" ng-controller="bubbleCtrl as bbl">
+        <div class = 'popup__overlay' ng-show = 'bbl.gOver' ng-click = 'bbl.toggleGOver();bbl.gameOver();'>
+            <div class = 'popup' >Game Over <p>Click to restart</p>
+            </div> 
+          </div>
+        <div >
+          <div game-settings></div>
+          
+          <div class = 'levelDiv'>УРОВЕНЬ: {{bbl.level}}</div>
+          <div class = 'mistakeDiv'>УПУЩЕНО: {{bbl.mistakeCount}}</div>
+          <div class = 'bubbleDiv' id = 'bubbleDiv'>
+            <div ng-repeat="bubble in bbl.bubbles">
+                <div class="bubble" style='left: {{bubble.left}}px; top: {{bubble.top}}px'>{{bubble.char}}</div>
+            </div>
+          </div>
+          <div class = 'scoreDiv'>ОЧКИ: {{bbl.score}}</div>
+        </div>
+        
+    </body>
+    </html>

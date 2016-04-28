@@ -1,0 +1,27 @@
+<div class = 'popup__overlay' ng-hide = 'bbl.gStarted'>
+	<div class = 'popup'>
+		<div class = 'startDiv btn' ng-click = 'bbl.startGame();'>START</div>
+        <div class = 'childDiv btn' ng-click = 'bbl.imaChild();'>Я ребенок!</div>
+      	<form name="childForm">
+		  <label>
+		    <input type="radio" ng-model="bbl.aChild" value="0">
+		    Я взрослый.
+		  </label><br/>
+		  <label>
+		    <input type="radio" ng-model="bbl.aChild" value="1">
+		    Я ребенок.
+		  </label>
+		</form>
+		<form name="langForm">
+		  <label>
+		    <input type="radio" ng-model="bbl.language" value="Русский">
+		    Русский.
+		  </label><br/>
+		  <label>
+		    <input type="radio" ng-model="bbl.language" value="English">
+		    English.
+		  </label>
+		</form>
+        <div class = 'langDiv btn'>{{bbl.language}}{{bbl.aChild}} </div>  
+	</div>
+</div>
